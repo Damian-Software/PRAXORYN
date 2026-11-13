@@ -1,0 +1,20 @@
+[Unit]
+Description=Local AI inference service
+After=network.target
+
+[Service]
+Type=simple
+User=localai
+Group=localai
+WorkingDirectory=/srv/localai
+ExecStart=/srv/localai/bin/llama-server -m /srv/localai/models/approved.gguf --host 127.0.0.1 --port 8080
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadOnlyPaths=/srv/localai/models
+
+[Install]
+WantedBy=multi-user.target

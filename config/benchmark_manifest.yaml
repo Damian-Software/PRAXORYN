@@ -1,0 +1,16 @@
+experiment_id: bench-0001
+host_os: REPLACE_WITH_WINDOWS_BUILD
+linux_os: Debian 13
+wsl_version: REPLACE_WITH_VERSION
+engine_commit: REPLACE_WITH_GIT_SHA
+model_sha256: REPLACE_WITH_SHA256
+cuda_toolkit: REPLACE_WITH_NVCC_VERSION
+gpu: NVIDIA GeForce RTX 5080 16GB
+context_size: 4096
+max_output_tokens: 128
+warmup_requests: 1
+measurement_requests: 5
+observed_p50_ms: null
+observed_p95_ms: null
+observed_ttft_ms: null
+observed_peak_vram_mb: null

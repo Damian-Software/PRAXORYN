@@ -1,0 +1,6 @@
+[
+  {"document_id":"math_basics","tenant_id":"school-A","allowed_roles":["student","teacher"],"sensitivity":"public","content":"A quadratic equation has the form ax^2+bx+c=0."},
+  {"document_id":"teachers_guide","tenant_id":"school-A","allowed_roles":["teacher"],"sensitivity":"internal","content":"Prepare a lesson on linear functions."},
+  {"document_id":"student_demo_record","tenant_id":"school-A","allowed_roles":["teacher"],"sensitivity":"student_record","content":"Synthetic record: practice score 8/10."},
+  {"document_id":"other_school","tenant_id":"school-B","allowed_roles":["teacher"],"sensitivity":"internal","content":"This document belongs to another school."}
+]

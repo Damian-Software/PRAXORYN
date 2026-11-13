@@ -1,0 +1,26 @@
+[Unit]
+Description=Local AI model worker (example, adapt paths and GPU permissions)
+After=network.target
+
+[Service]
+Type=simple
+User=localai
+Group=localai
+WorkingDirectory=/srv/localai
+ExecStart=/srv/localai/venv/bin/python /srv/localai/worker.py
+Restart=on-failure
+RestartSec=10s
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/localai /var/log/localai
+UMask=0077
+MemoryAccounting=true
+MemoryMax=40G
+TasksMax=256
+LimitNOFILE=4096
+# Review GPU device access and required Linux paths before enabling stricter DevicePolicy.
+
+[Install]
+WantedBy=multi-user.target

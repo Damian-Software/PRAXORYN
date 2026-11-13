@@ -1,0 +1,27 @@
+[Unit]
+Description=Local AI restricted read-only agent worker
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=localai-reader
+Group=localai-reader
+ExecStart=/opt/localai/venv/bin/python /opt/localai/reader.py
+WorkingDirectory=/opt/localai
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+CapabilityBoundingSet=
+AmbientCapabilities=
+StateDirectory=localai-reader
+RuntimeDirectory=localai-reader
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

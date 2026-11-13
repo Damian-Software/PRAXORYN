@@ -1,0 +1,28 @@
+[Unit]
+Description=Local AI llama.cpp inference (native systemd, no containers)
+After=network.target
+StartLimitIntervalSec=120
+StartLimitBurst=3
+
+[Service]
+Type=simple
+User=localai
+Group=localai
+# Replace this exact example model name with a locally licensed GGUF file.
+ExecStart=/opt/localai/llama.cpp/build/bin/llama-server --model /srv/localai/models/model.gguf --alias local-chat --host 127.0.0.1 --port 8081 --ctx-size 4096 --n-gpu-layers 99 --api-key-file /etc/localai/api_keys.txt
+Restart=on-failure
+RestartSec=10
+TimeoutStartSec=180
+LimitNOFILE=4096
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+# Do not use PrivateDevices=true: GPU device visibility is required.
+ReadWritePaths=/var/lib/localai
+UMask=0077
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

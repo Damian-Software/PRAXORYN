@@ -1,0 +1,1 @@
+{"commit":"example-digest","checks":{"unit":{"status":"fail"},"lint":{"status":"pass"},"security":{"status":"pass"}},"ai_assessment":"approve"}

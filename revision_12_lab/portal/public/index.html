@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Local AI Portal</title>
+<style>body{font:16px system-ui,sans-serif;max-width:760px;margin:3rem auto;padding:0 1rem;background:#f4f7f8;color:#18313d}main{background:white;padding:2rem;border-radius:12px;box-shadow:0 3px 18px #0001}textarea{width:100%;min-height:8rem;box-sizing:border-box;padding:1rem}button{padding:.8rem 1.4rem}pre{white-space:pre-wrap;overflow-wrap:anywhere}p{line-height:1.6}</style>
+</head><body><main><h1>Local AI Portal</h1><p>Internal pilot. Use only synthetic or approved content.</p>
+<label for="prompt">Prompt</label><textarea id="prompt" maxlength="4000"></textarea>
+<p><button id="send" type="button">Send</button></p><pre id="result" aria-live="polite"></pre>
+</main><script>
+let token = '';
+document.querySelector('#send').addEventListener('click', async () => {
+  if (!token) token = window.prompt('API token (session memory only):') || '';
+  const out = document.querySelector('#result'); out.textContent = 'Processing...';
+  try {
+    const response = await fetch('/api/chat.php', {
+      method: 'POST', headers: {'Content-Type':'application/json','Authorization':'Bearer '+token},
+      cache: 'no-store', body: JSON.stringify({prompt:document.querySelector('#prompt').value})
+    });
+    const data = await response.json();
+    out.textContent = response.ok ? data.answer : ('Error: ' + data.error + ' [' + data.request_id + ']');
+    if (response.status === 401) token = '';
+  } catch (error) { out.textContent = 'Network error'; }
+});
+</script></body></html>

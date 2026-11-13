@@ -1,0 +1,7 @@
+# Security boundaries
+
+This educational tool reads local source files; it does **not** run code from the scanned repository, run tests, install dependencies, apply patches, or automatically call external endpoints. `ruff` and `clang-tidy` are separate optional tools invoked via fixed argument vectors without a shell. Their plugins, configurations, and parsers are still code with their own supply-chain risks. Never scan untrusted repositories on a privileged host or with production secrets accessible. For externally supplied source, use an isolated, disposable, network-restricted runner.
+
+The toy JSON plugin matches literal strings only; it is not a full plugin runtime. It deliberately cannot execute arbitrary Python. Plugin JSON files still need code review because their findings can mislead reviewers. LLM output is advisory, not a security decision, patch, or merge approval. The optional model call is restricted to `http://localhost`, `127.0.0.1`, or `::1`; it may still expose code to processes reachable on that loopback interface. Ensure your intended model server actually owns the listening port and store keys in a dedicated service manager secret, not in shell history. Scanned code may contain untrusted prompt injection; do not interpret it as instructions.
+
+Reports may contain source paths and messages. Restrict access, apply retention periods, and never publish them publicly without review.

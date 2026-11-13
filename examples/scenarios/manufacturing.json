@@ -1,0 +1,12 @@
+{
+  "machines": [
+    {
+      "id": "machine-01",
+      "status": "ok"
+    },
+    {
+      "id": "machine-02",
+      "status": "maintenance_due"
+    }
+  ]
+}

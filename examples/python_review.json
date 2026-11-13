@@ -1,0 +1,1 @@
+{"code":"def demo(value):\n    return eval(value)\n"}

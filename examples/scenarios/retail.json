@@ -1,0 +1,16 @@
+{
+  "products": [
+    {
+      "sku": "SKU-001",
+      "description": "Synthetic accessory"
+    },
+    {
+      "sku": "SKU-002",
+      "description": ""
+    },
+    {
+      "sku": "SKU-001",
+      "description": "Duplicate item"
+    }
+  ]
+}

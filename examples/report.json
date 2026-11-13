@@ -1,0 +1,8 @@
+{
+ "title":"Synthetic Service Delivery Report",
+ "sections":[
+   {"heading":"Purpose","body":"This sample describes an internal workflow and contains no customer data."},
+   {"heading":"Result","body":"The export is a draft and requires manual review before sharing."},
+   {"heading":"Verification","body":"A reviewer checks the generated DOCX and PDF, filenames and SHA-256 hashes."}
+ ]
+}

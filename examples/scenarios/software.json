@@ -1,0 +1,3 @@
+{
+  "code": "def transform(raw):\n    return eval(raw)\n"
+}

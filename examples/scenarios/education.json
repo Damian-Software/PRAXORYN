@@ -1,0 +1,17 @@
+{
+  "role": "student",
+  "resources": [
+    {
+      "id": "public-guide",
+      "classification": "public"
+    },
+    {
+      "id": "course-notes",
+      "classification": "course"
+    },
+    {
+      "id": "staff-only",
+      "classification": "staff"
+    }
+  ]
+}

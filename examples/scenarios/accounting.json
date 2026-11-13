@@ -1,0 +1,13 @@
+{
+  "rows": [
+    {
+      "quantity": "3",
+      "unit_price": "12.35"
+    },
+    {
+      "quantity": "2",
+      "unit_price": "5.80"
+    }
+  ],
+  "declared_total": "48.65"
+}

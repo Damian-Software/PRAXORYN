@@ -1,0 +1,20 @@
+[Unit]
+Description=Praxoryn MediaOps periodic laboratory task
+After=network.target
+
+[Service]
+Type=oneshot
+User=praxoryn
+Group=praxoryn
+WorkingDirectory=/opt/praxoryn-mediaops
+EnvironmentFile=/etc/praxoryn/mediaops.env
+ExecStart=/opt/praxoryn-mediaops/.venv/bin/python -m praxoryn_mediaops --workspace /var/lib/praxoryn/mediaops demo /opt/praxoryn-mediaops/examples/brief.json
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/praxoryn/mediaops
+UMask=0077
+
+# Only for a supervised lab; duplicate titles cause intentional failure.
+# For recurring jobs, replace the fixed brief with your approved queue worker.

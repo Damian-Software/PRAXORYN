@@ -1,0 +1,11 @@
+[Unit]
+Description=Poll OpsBridge demo queue every 30 seconds
+
+[Timer]
+OnBootSec=30s
+OnUnitInactiveSec=30s
+Unit=opsbridge-worker.service
+Persistent=false
+
+[Install]
+WantedBy=timers.target

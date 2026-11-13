@@ -1,0 +1,18 @@
+[Unit]
+Description=Praxoryn OpsBridge demo worker (single iteration per invocation)
+After=network.target
+
+[Service]
+Type=oneshot
+User=opsbridge
+Group=opsbridge
+Environment=OPSBRIDGE_HOME=/var/lib/opsbridge
+WorkingDirectory=/opt/opsbridge
+ExecStart=/opt/opsbridge/.venv/bin/python -m opsbridge worker-once --backend offline
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/var/lib/opsbridge
+RestrictAddressFamilies=AF_UNIX
+UMask=0077

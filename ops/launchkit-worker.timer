@@ -1,0 +1,11 @@
+[Unit]
+Description=Praxoryn LaunchKit periodic worker
+
+[Timer]
+OnBootSec=30s
+OnUnitInactiveSec=15s
+Unit=launchkit-worker.service
+Persistent=false
+
+[Install]
+WantedBy=timers.target

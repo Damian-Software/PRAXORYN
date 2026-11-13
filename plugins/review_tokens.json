@@ -1,0 +1,7 @@
+{
+  "id": "LOCAL_REVIEW_RULES",
+  "rules": [
+    {"id": "PY_DEBUG_BREAKPOINT", "token": "breakpoint()", "severity": "medium", "extensions": [".py"]},
+    {"id": "CPP_DEBUG_PRINT", "token": "std::cout", "severity": "low", "extensions": [".cpp", ".hpp", ".h"]}
+  ]
+}

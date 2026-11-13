@@ -1,0 +1,20 @@
+[Unit]
+Description=Local AI Inference Engine
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=localai
+Group=localai
+WorkingDirectory=/srv/localai/llama.cpp
+ExecStart=/srv/localai/llama.cpp/build/bin/llama-server -m /srv/localai/models/Qwen3-4B-Q4_K_M.gguf --host 127.0.0.1 --port 8081 --alias local-qwen3-4b -c 4096 -ngl 99 -np 1
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target

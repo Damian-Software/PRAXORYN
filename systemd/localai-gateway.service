@@ -1,0 +1,25 @@
+[Unit]
+Description=Local AI API Gateway
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=localai
+Group=localai
+WorkingDirectory=/srv/localai/gateway
+EnvironmentFile=/etc/localai/gateway.env
+ExecStart=/srv/localai/gateway/.venv/bin/uvicorn app:app --host 127.0.0.1 --port 8000 --workers 1 --no-access-log
+Restart=on-failure
+RestartSec=3
+UMask=0027
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/localai/state
+ReadOnlyPaths=/srv/localai/gateway
+MemoryMax=4G
+
+[Install]
+WantedBy=multi-user.target

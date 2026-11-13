@@ -1,0 +1,27 @@
+[Unit]
+Description=Local AI inference service
+After=network.target
+StartLimitIntervalSec=120
+StartLimitBurst=3
+
+[Service]
+Type=simple
+User=localai
+Group=localai
+WorkingDirectory=/var/lib/localai
+ExecStart=/opt/localai/bin/llama-server --model /srv/localai/models/approved-model.gguf --host 127.0.0.1 --port 8080 --ctx-size 4096 --n-gpu-layers 999
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=60
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+UMask=0027
+
+[Install]
+WantedBy=multi-user.target

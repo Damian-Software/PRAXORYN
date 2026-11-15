@@ -1,0 +1,11 @@
+[Unit]
+Description=Run one approved AI field-kit queue item periodically
+
+[Timer]
+OnBootSec=1min
+OnUnitInactiveSec=30s
+Unit=aiops-worker.service
+Persistent=false
+
+[Install]
+WantedBy=timers.target

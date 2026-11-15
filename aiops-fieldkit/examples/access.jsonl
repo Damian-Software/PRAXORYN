@@ -1,0 +1,7 @@
+{"remote_addr":"203.0.113.20","status":401,"path":"/v1/chat/completions"}
+{"remote_addr":"203.0.113.20","status":403,"path":"/admin"}
+{"remote_addr":"198.51.100.14","status":429,"path":"/v1/chat/completions"}
+{"remote_addr":"8.8.8.8","status":401,"path":"/login"}
+{"remote_addr":"8.8.8.8","status":401,"path":"/login"}
+{"remote_addr":"8.8.8.8","status":403,"path":"/login"}
+{"remote_addr":"8.8.8.8","status":429,"path":"/login"}

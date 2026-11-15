@@ -1,0 +1,21 @@
+[Unit]
+Description=AI Ops Field Kit single-job worker
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=aiops
+Group=aiops
+WorkingDirectory=/opt/aiops-fieldkit
+EnvironmentFile=/etc/aiops-fieldkit/worker.env
+Environment=AIOPS_DB=/var/lib/aiops-fieldkit/aiops.sqlite
+ExecStart=/opt/aiops-fieldkit/.venv/bin/python -m aiops work
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/var/lib/aiops-fieldkit
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+MemoryMax=2G
+TimeoutStartSec=120

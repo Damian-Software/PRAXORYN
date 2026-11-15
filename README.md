@@ -1,95 +1,60 @@
-# PRAXORYN MEDIAOPS - local-first multimedia laboratory
+# PRAXORYN — Practical Local AI Engineering
 
-This laboratory has two different execution modes:
+**Author:** Damián Zelený  
+**Book:** PRAXORYN — From model fundamentals to secure real-world deployment  
+**Repository language:** English. The published book is available separately in Czech.
 
-- `demo`: runs fully offline, creates an explicitly labeled synthetic PNG, a real DOCX/PDF and a still-image MP4. **It does not generate media with AI**.
-- `live`: calls an existing local OpenAI-compatible language endpoint and optionally invokes an already installed ComfyUI graph exported in API format. Without a provided image/video workflow, the corresponding asset remains a synthetic preview.
+This is the book's companion-source repository. Its examples cover native Debian and WSL2 deployments, existing local-model APIs, Python and C++ code review, PHP/MariaDB integrations, RAG, controlled agents, documents and multimedia workflows.
 
-## Debian / WSL2 installation (no containers)
+> **Safety scope:** Reference projects are teaching laboratories. They are not automatically security-audited public services. Offline mock examples must not be mistaken for live AI inference or measured GPU performance. No Docker or Boost is required by these learning paths.
 
-```bash
-sudo apt update
-sudo apt install -y python3 python3-venv python3-pip ffmpeg libreoffice
-python3 -m venv .venv
-. .venv/bin/activate
-python -m pip install -r requirements.txt
-python -m praxoryn_mediaops demo examples/brief.json
-python -m praxoryn_mediaops audit
-python -m unittest discover -s tests -v
-```
+## Start with a practical project
 
-Every run creates a new output directory named from the validated title. For repeated experiments change the title, or deliberately move the prior output elsewhere. Never erase customer files to make a demo run succeed.
+| Project | Directory | Main purpose |
+|---|---|---|
+| AI Operations Field Kit | [aiops-fieldkit/](aiops-fieldkit/) | Tenant-scoped queue, approvals, invoices, code scanning and defensive proposals |
+| Local API client labs | [api_labs/](api_labs/) | Calling existing local model APIs |
+| Python/C++ CodeOps | [codeops/](codeops/) | AST scanning, optional Ruff/clang-tidy, JSON/HTML/SARIF |
+| MediaOps | [praxoryn_mediaops/](praxoryn_mediaops/) | DOCX/PDF, synthetic previews and optional ComfyUI |
+| Studio | [praxoryn_studio/](praxoryn_studio/) | Job workflow, approvals, media export |
+| OpsBridge | [opsbridge/](opsbridge/) | Worker workflows and business tools |
+| LaunchKit | [launchkit/](launchkit/) | Document generation, audit and tenant metadata |
 
-## Live language API
-
-```bash
-export PRAXORYN_MODEL_URL=http://127.0.0.1:8080
-export PRAXORYN_MODEL_ID=REPLACE_WITH_MODEL_ID
-# Optional, only if upstream server requires it:
-export PRAXORYN_MODEL_TOKEN=REPLACE_WITH_REAL_TOKEN
-python -m praxoryn_mediaops live examples/brief.json
-```
-
-The model server must already be running. This client does not download or load a model automatically.
-
-## Live image / video workflows
-
-1. Install and start ComfyUI natively, bind it only to `127.0.0.1:8188`.
-2. Download a model only after checking its license, minimum VRAM, and checksum.
-3. Create a workflow that works in ComfyUI's GUI; ensure it has output-saving nodes.
-4. Export the workflow in **API format** as `workflows/my-image.json` or `workflows/my-video.json`.
-5. Inspect the graph JSON, identify the positive prompt node and its exact text field.
-6. Set `PRAXORYN_COMFY_TEXT_NODE`, `PRAXORYN_COMFY_TEXT_FIELD`, and equivalent video variables.
-7. Run `python -m praxoryn_mediaops live examples/brief.json --image-workflow workflows/my-image.json --video-workflow workflows/my-video.json`.
-
-The API adapter cannot guarantee every custom workflow or node's output format. A model-specific graph is not bundled: silently choosing one would be misleading, and many video models will not fit in 16 GB VRAM. Test the selected architecture at a small resolution, frame count and context length first.
-
-## Security boundaries
-
-- The sample client only connects to loopback HTTP model/ComfyUI servers.
-- It never executes model-generated shell commands or SQL.
-- `audit.sqlite` contains status and counts, not prompts, outputs, or tokens.
-- Files (`draft.txt`, `report.docx`, etc.) do contain prompt-derived content. Protect and delete them according to your retention policy.
-- Do not put auth tokens in the manuscript, examples, process list, web root, or git history.
-- Local-only is not the same as multi-tenant production isolation.
-- For public use, add login, authorization, tenant isolation, sandboxing, quotas, output moderation, licensing checks, malware scan for uploads and independent security audit.
-
-## Optional MCP
+## AI Operations Field Kit: quick start
 
 ```bash
-python -m pip install 'mcp[cli]'
-python -m praxoryn_mediaops.mcp_optional
+git clone https://github.com/Damian-Software/PRAXORYN.git
+cd PRAXORYN/aiops-fieldkit
+python3 -m unittest discover -s tests -v
+python3 -m aiops init
+python3 -m aiops tenant org-alpha --credit 5
+python3 -m aiops submit org-alpha summary case_487.txt --workspace ./examples --key request-000001
+python3 -m aiops work --mock
+python3 -m aiops job org-alpha 1
 ```
 
-The optional read-only tool offers a decimal calculator. Never expose the filesystem or a command executor to agents by default. Confirm the installed SDK version and transport behaviour against the official documentation.
+The 32 examples `case_487.txt` through `case_518.txt` are written in English.
 
-## Offline local API contract test (still no AI inference)
+## Additional companion laboratories
 
-In terminal A:
+The printed book also references laboratory archives from Volume II and Volume III. A consolidated package named `PRAXORYN_COMPLETE_COMPANION_SOURCES_EN.zip` contains **13 separate laboratories**. Some older projects are **not yet browsable as individual source files in this GitHub repository**. See [the transparent coverage index](docs/COMPANION_SOURCE_COVERAGE.md).
+
+To import a downloaded and verified copy of that package without overwriting repository files, use:
 
 ```bash
-python -m praxoryn_mediaops.mock_llm
+python3 tools/import_companion_bundle.py PRAXORYN_COMPLETE_COMPANION_SOURCES_EN.zip
+python3 tools/import_companion_bundle.py PRAXORYN_COMPLETE_COMPANION_SOURCES_EN.zip --apply
 ```
 
-In terminal B (change the brief title if the output folder already exists):
+The importer copies missing files into `companion-labs/` only after SHA-256 verification. It does not upload to GitHub automatically: review the changes before committing. The bundle is available from the book's author and must not be downloaded from untrusted mirrors.
 
-```bash
-curl -fsS http://127.0.0.1:8767/v1/models
-export PRAXORYN_MODEL_URL=http://127.0.0.1:8767
-export PRAXORYN_MODEL_ID=offline-mock
-python -m praxoryn_mediaops live examples/brief-school.json
-```
+## Security and support
 
-The text generated by this server clearly identifies itself as an **OFFLINE MOCK RESPONSE**. It is a protocol fixture, not a language model.
+- Keep model engines bound to loopback unless proper TLS, identity, quotas, auditing, and isolation are configured.
+- Run untrusted code samples inside appropriate sandboxes; do not directly execute model-generated shell commands.
+- Check model licenses and dependencies before commercial use.
+- Use test data for labs; do not upload private prompts, keys or client records to public GitHub.
+- Follow [the security notes](docs/SECURITY.md).
+- See [the MediaOps-specific quick start](docs/MEDIAOPS_QUICKSTART.md).
 
-## Manifest verification and sequential batch
-
-```bash
-python - <<'PY'
-from pathlib import Path
-from praxoryn_mediaops.verify import verify_manifest
-print(verify_manifest(Path('private-output/Product-Launch-01')))
-PY
-```
-
-The `batch.py` module runs at most 10 synthetic/approved briefs by default. It deliberately does not process arbitrary public uploads or retry failures indefinitely. A queue with worker leases, tenant admission control and idempotency is required before production batch use.
+**Maintainer:** Damián Zelený.

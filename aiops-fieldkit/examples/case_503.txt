@@ -1,0 +1,6 @@
+Synthetic business case: Obchod a zákaznická podpora.
+Business task: CRM e-mailový návrh.
+Acceptance criterion: Návrh e-mailu vznikne bez přímého odeslání a s identifikovatelným schválením.
+Operational boundary: Přístup ke CRM se odvozuje z role a obchodního účelu.
+What is missing: identifiers of authorized staff, exact source-system records, data retention policy and locally approved decision rules.
+Instruction: prepare a short working draft, list assumptions and unknown facts, never claim an external action was taken, and ask for human review.

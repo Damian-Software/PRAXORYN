@@ -1,0 +1,6 @@
+Synthetic business case: Paid AI provider
+Business task: Isolate company B data.
+Acceptance criterion: Company B cannot access company A records.
+Operational boundary: Identity must be verified by the server, not supplied by an untrusted client.
+Missing information: authorized staff, system-of-record records, retention schedule, approved decision rules.
+Operator instruction: prepare a draft, list missing facts and assumptions, never claim an external action was taken, and request human review.

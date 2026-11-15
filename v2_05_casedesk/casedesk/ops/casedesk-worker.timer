@@ -1,0 +1,8 @@
+[Unit]
+Description=Run CaseDesk draft worker periodically
+[Timer]
+OnBootSec=30s
+OnUnitInactiveSec=20s
+Unit=casedesk-worker.service
+[Install]
+WantedBy=timers.target

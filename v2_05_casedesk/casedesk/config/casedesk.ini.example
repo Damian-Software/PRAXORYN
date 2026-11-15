@@ -1,0 +1,11 @@
+[db]
+host = "127.0.0.1"
+name = "casedesk"
+user = "casedesk_app"
+password = "REPLACE_STRONG_PASSWORD"
+[model]
+endpoint = "http://127.0.0.1:8080/v1/chat/completions"
+id = "REPLACE_MODEL_FROM_V1_MODELS"
+token = "REPLACE_UPSTREAM_TOKEN"
+[app]
+secure_cookie = false

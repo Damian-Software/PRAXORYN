@@ -1,0 +1,14 @@
+# This config is intentionally loopback-only. Do not expose without TLS and authentication.
+server {
+    listen 127.0.0.1:8182;
+    server_name localhost;
+    root /var/www/aiops/public;
+    index index.php;
+    location / { try_files $uri /index.php?$query_string; }
+    location ~ \.php$ {
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_pass unix:/run/php/php8.4-fpm.sock; # VERIFY on this host
+    }
+    location ~ /\. { deny all; }
+}

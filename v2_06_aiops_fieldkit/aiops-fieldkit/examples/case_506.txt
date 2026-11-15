@@ -1,0 +1,6 @@
+Synthetic business case: Sales and customer support
+Business task: Audit customer communication.
+Acceptance criterion: Distinguish receive, draft, approval and dispatch events.
+Operational boundary: Set justified retention and access rules.
+Missing information: authorized staff, system-of-record records, retention schedule, approved decision rules.
+Operator instruction: prepare a draft, list missing facts and assumptions, never claim an external action was taken, and request human review.

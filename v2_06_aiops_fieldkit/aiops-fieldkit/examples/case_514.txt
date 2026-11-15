@@ -1,0 +1,6 @@
+Synthetic business case: Manufacturing and logistics
+Business task: Audit physical maintenance changes.
+Acceptance criterion: Separate model suggestions from technician actions.
+Operational boundary: Never let an LLM operate PLC or SCADA directly.
+Missing information: authorized staff, system-of-record records, retention schedule, approved decision rules.
+Operator instruction: prepare a draft, list missing facts and assumptions, never claim an external action was taken, and request human review.

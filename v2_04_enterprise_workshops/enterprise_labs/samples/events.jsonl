@@ -1,0 +1,5 @@
+{"ts":"2026-11-13T10:00:00Z","event":"auth_failed","ip":"8.8.8.8"}
+{"ts":"2026-11-13T10:00:01Z","event":"auth_failed","ip":"8.8.8.8"}
+{"ts":"2026-11-13T10:00:02Z","event":"auth_failed","ip":"8.8.8.8"}
+{"ts":"2026-11-13T10:00:03Z","event":"rate_limited","ip":"8.8.8.8"}
+{"ts":"2026-11-13T10:00:04Z","event":"auth_failed","ip":"127.0.0.1"}

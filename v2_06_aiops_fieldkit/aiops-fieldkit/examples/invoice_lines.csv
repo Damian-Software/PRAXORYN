@@ -1,0 +1,4 @@
+invoice_id,quantity,unit_price,line_total
+INV-001,2,49.50,99.00
+INV-001,1,20.00,19.00
+INV-002,3,12.25,36.75

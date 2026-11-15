@@ -1,0 +1,4 @@
+subject,body,classification
+Delivery question,What is the procedure for checking the order status?,public
+Invoice query,Can I get a copy of the invoice for my order?,internal
+Claim review,This sample case contains simulated sensitive personal data.,restricted

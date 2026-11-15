@@ -1,0 +1,6 @@
+Synthetic business case: Sales and customer support
+Business task: Draft CRM correspondence.
+Acceptance criterion: Save a reviewable draft without sending it.
+Operational boundary: Apply role-based CRM access.
+Missing information: authorized staff, system-of-record records, retention schedule, approved decision rules.
+Operator instruction: prepare a draft, list missing facts and assumptions, never claim an external action was taken, and request human review.

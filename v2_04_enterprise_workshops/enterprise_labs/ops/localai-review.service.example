@@ -1,0 +1,23 @@
+[Unit]
+Description=Local AI review helper (one-shot example)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=ai-review
+Group=ai-review
+WorkingDirectory=/var/lib/localai-review
+Environment=LOCALAI_BASE_URL=http://127.0.0.1:8080
+Environment=LOCALAI_MODEL=REPLACE_MODEL_ID
+# For production use LoadCredential= if supported and a wrapper that reads it.
+ExecStart=/usr/bin/python3 /opt/localai-review/review.py --repo /srv/review-repo --base main --preview
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/localai-review
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+
+[Install]
+WantedBy=multi-user.target

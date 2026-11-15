@@ -1,6 +1,6 @@
-Synthetic business case: Právní a HR oddělení.
-Business task: schválená verze šablony.
-Acceptance criterion: Výstup má jednoznačné schválení a kontrolovatelný otisk.
-Operational boundary: Před podpisem je třeba ověřit finální text a příslušný pracovní předpis.
-What is missing: identifiers of authorized staff, exact source-system records, data retention policy and locally approved decision rules.
-Instruction: prepare a short working draft, list assumptions and unknown facts, never claim an external action was taken, and ask for human review.
+Synthetic business case: Legal and human resources
+Business task: Approve a template version
+Acceptance criterion: Record approval and a reproducible file digest.
+Operational boundary: Verify the final wording before signature.
+Missing information: authorized staff identities, system-of-record data, retention policy, and approved decision rules.
+Operator instruction: prepare a short draft, list assumptions and unknowns, never claim an external action was performed, and request human review.

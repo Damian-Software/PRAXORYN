@@ -1,6 +1,6 @@
-Synthetic business case: Veřejná správa.
-Business task: audit administrativního toku.
-Acceptance criterion: Události ukážou změnu stavu bez ukládání kompletního podání do provozních logů.
-Operational boundary: Pro úřady platí zvláštní pravidla archivace a přístupnosti.
-What is missing: identifiers of authorized staff, exact source-system records, data retention policy and locally approved decision rules.
-Instruction: prepare a short working draft, list assumptions and unknown facts, never claim an external action was taken, and ask for human review.
+Synthetic business case: Public administration
+Business task: Audit an administrative workflow
+Acceptance criterion: Trace status changes without copying submissions into logs.
+Operational boundary: Apply public-sector retention and access rules.
+Missing information: authorized staff identities, system-of-record data, retention policy, and approved decision rules.
+Operator instruction: prepare a short draft, list assumptions and unknowns, never claim an external action was performed, and request human review.

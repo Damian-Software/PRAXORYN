@@ -1,6 +1,6 @@
-Synthetic business case: Obchod a zákaznická podpora.
-Business task: zpracování reklamace.
-Acceptance criterion: Operátor doplní závazné informace o záruce až po ověření v systému.
-Operational boundary: Model sám nepřislibuje refundaci ani neprovádí platbu.
-What is missing: identifiers of authorized staff, exact source-system records, data retention policy and locally approved decision rules.
-Instruction: prepare a short working draft, list assumptions and unknown facts, never claim an external action was taken, and ask for human review.
+Synthetic business case: Retail and customer support
+Business task: Handle a complaint
+Acceptance criterion: A human confirms warranty facts using the system of record.
+Operational boundary: The model cannot promise refunds or issue payments.
+Missing information: authorized staff identities, system-of-record data, retention policy, and approved decision rules.
+Operator instruction: prepare a short draft, list assumptions and unknowns, never claim an external action was performed, and request human review.

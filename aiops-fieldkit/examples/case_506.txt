@@ -1,6 +1,6 @@
-Synthetic business case: Obchod a zákaznická podpora.
-Business task: evidence zákaznické komunikace.
-Acceptance criterion: Auditní metadata odliší přijetí, návrh a schválení.
-Operational boundary: Doba uchování komunikace musí být zdůvodněna a schválena.
-What is missing: identifiers of authorized staff, exact source-system records, data retention policy and locally approved decision rules.
-Instruction: prepare a short working draft, list assumptions and unknown facts, never claim an external action was taken, and ask for human review.
+Synthetic business case: Retail and customer support
+Business task: Audit communication workflow
+Acceptance criterion: Distinguish received, drafted and approved states.
+Operational boundary: Set a justified retention schedule.
+Missing information: authorized staff identities, system-of-record data, retention policy, and approved decision rules.
+Operator instruction: prepare a short draft, list assumptions and unknowns, never claim an external action was performed, and request human review.

@@ -1,6 +1,6 @@
-Synthetic business case: Provozovatel placeného AI.
-Business task: oddělení firmy B.
-Acceptance criterion: Záznam firmy A musí být nedostupný pod identitou firmy B.
-Operational boundary: Veřejné API vyžaduje serverem ověřenou identitu, nikoli libovolný query parametr.
-What is missing: identifiers of authorized staff, exact source-system records, data retention policy and locally approved decision rules.
-Instruction: prepare a short working draft, list assumptions and unknown facts, never claim an external action was taken, and ask for human review.
+Synthetic business case: Paid AI provider
+Business task: Company B tenant isolation
+Acceptance criterion: Records belonging to company A must be inaccessible to company B.
+Operational boundary: Enforce identity on the server; never trust a client-supplied tenant identifier.
+Missing information: authorized staff identities, system-of-record data, retention policy, and approved decision rules.
+Operator instruction: prepare a short draft, list assumptions and unknowns, never claim an external action was performed, and request human review.

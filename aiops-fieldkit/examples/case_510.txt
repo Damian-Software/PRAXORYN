@@ -1,6 +1,6 @@
-Synthetic business case: Zdravotnictví.
-Business task: bezpečný export podkladů.
-Acceptance criterion: Schválená verze může být exportována do chráněného souboru.
-Operational boundary: Před přenosem mimo zdravotnický systém je nutná kontrola příjemce a šifrování.
-What is missing: identifiers of authorized staff, exact source-system records, data retention policy and locally approved decision rules.
-Instruction: prepare a short working draft, list assumptions and unknown facts, never claim an external action was taken, and ask for human review.
+Synthetic business case: Healthcare administration
+Business task: Export approved supporting documents
+Acceptance criterion: Export only an approved and access-controlled version.
+Operational boundary: Verify the recipient and use appropriate encryption.
+Missing information: authorized staff identities, system-of-record data, retention policy, and approved decision rules.
+Operator instruction: prepare a short draft, list assumptions and unknowns, never claim an external action was performed, and request human review.

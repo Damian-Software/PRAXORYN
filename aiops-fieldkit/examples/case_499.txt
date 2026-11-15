@@ -1,6 +1,6 @@
-Synthetic business case: Pojišťovna.
-Business task: příjem a rozdělení případu.
-Acceptance criterion: Podklady se evidují jako pracovní případ a čekají na kontrolu oprávněným likvidátorem.
-Operational boundary: Automatizace nesmí bez oprávnění rozhodnout o zamítnutí nebo výplatě pojistky.
-What is missing: identifiers of authorized staff, exact source-system records, data retention policy and locally approved decision rules.
-Instruction: prepare a short working draft, list assumptions and unknown facts, never claim an external action was taken, and ask for human review.
+Synthetic business case: Insurance
+Business task: Receive and classify a claim
+Acceptance criterion: Queue the claim for review by an authorized claims handler.
+Operational boundary: Do not automatically approve or deny coverage.
+Missing information: authorized staff identities, system-of-record data, retention policy, and approved decision rules.
+Operator instruction: prepare a short draft, list assumptions and unknowns, never claim an external action was performed, and request human review.

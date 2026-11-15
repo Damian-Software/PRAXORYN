@@ -1,0 +1,3 @@
+# Core OpsBridge uses only the Python standard library.
+# Optional document export: pip install python-docx
+# Optional MCP examples require an independently reviewed compatible mcp SDK.

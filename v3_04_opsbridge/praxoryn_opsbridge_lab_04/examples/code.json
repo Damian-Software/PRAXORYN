@@ -1,0 +1,1 @@
+{"source":"value = eval(user_input)\nsubprocess.run(cmd, shell=True)\n"}

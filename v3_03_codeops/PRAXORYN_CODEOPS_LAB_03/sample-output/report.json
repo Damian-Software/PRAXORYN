@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-13T19:35:52.200028+00:00",
+  "tool_status": {
+    "python-ast": "ok",
+    "ruff": "not_installed",
+    "clang-tidy": "not_installed",
+    "plugin:LOCAL_REVIEW_RULES": "ok"
+  },
+  "findings": [
+    {
+      "rule": "CPP_DEBUG_PRINT",
+      "severity": "low",
+      "path": "main.cpp",
+      "line": 5,
+      "message": "Found literal token for rule CPP_DEBUG_PRINT",
+      "source": "plugin:LOCAL_REVIEW_RULES",
+      "column": 1
+    },
+    {
+      "rule": "PY_DYNAMIC_EXEC",
+      "severity": "high",
+      "path": "unsafe.py",
+      "line": 5,
+      "message": "Dynamic code execution requires review",
+      "source": "python-ast",
+      "column": 1
+    },
+    {
+      "rule": "PY_SHELL_TRUE",
+      "severity": "high",
+      "path": "unsafe.py",
+      "line": 8,
+      "message": "Shell invocation needs explicit justification",
+      "source": "python-ast",
+      "column": 1
+    },
+    {
+      "rule": "PY_BARE_EXCEPT",
+      "severity": "medium",
+      "path": "unsafe.py",
+      "line": 13,
+      "message": "Bare except may hide errors",
+      "source": "python-ast",
+      "column": 1
+    },
+    {
+      "rule": "PY_DEBUG_BREAKPOINT",
+      "severity": "medium",
+      "path": "unsafe.py",
+      "line": 16,
+      "message": "Found literal token for rule PY_DEBUG_BREAKPOINT",
+      "source": "plugin:LOCAL_REVIEW_RULES",
+      "column": 1
+    }
+  ],
+  "finding_count": 5,
+  "high_count": 2
+}

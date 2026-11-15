@@ -1,0 +1,116 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Praxoryn CodeOps",
+          "rules": []
+        }
+      },
+      "results": [
+        {
+          "ruleId": "CPP_DEBUG_PRINT",
+          "level": "note",
+          "message": {
+            "text": "Found literal token for rule CPP_DEBUG_PRINT"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "main.cpp"
+                },
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "PY_DYNAMIC_EXEC",
+          "level": "error",
+          "message": {
+            "text": "Dynamic code execution requires review"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "unsafe.py"
+                },
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "PY_SHELL_TRUE",
+          "level": "error",
+          "message": {
+            "text": "Shell invocation needs explicit justification"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "unsafe.py"
+                },
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "PY_BARE_EXCEPT",
+          "level": "warning",
+          "message": {
+            "text": "Bare except may hide errors"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "unsafe.py"
+                },
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "PY_DEBUG_BREAKPOINT",
+          "level": "warning",
+          "message": {
+            "text": "Found literal token for rule PY_DEBUG_BREAKPOINT"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "unsafe.py"
+                },
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

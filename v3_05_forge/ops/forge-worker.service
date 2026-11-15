@@ -1,0 +1,19 @@
+[Unit]
+Description=Praxoryn Forge example local worker
+After=network.target
+
+[Service]
+Type=oneshot
+User=praxoryn
+Group=praxoryn
+WorkingDirectory=/opt/praxoryn-forge
+Environment=PYTHONPATH=/opt/praxoryn-forge
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/usr/bin/python3 -m forge --home /var/lib/praxoryn-forge run-once --backend offline
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/praxoryn-forge
+RestrictAddressFamilies=AF_UNIX
+UMask=0077

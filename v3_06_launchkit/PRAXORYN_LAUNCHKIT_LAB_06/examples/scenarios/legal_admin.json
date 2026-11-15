@@ -1,0 +1,12 @@
+{
+  "documents": [
+    {
+      "id": "doc-001",
+      "category": "contract"
+    },
+    {
+      "id": "doc-002",
+      "category": "unknown"
+    }
+  ]
+}

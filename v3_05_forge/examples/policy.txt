@@ -1,0 +1,3 @@
+Policy A: A reviewer must approve every outgoing customer document.
+Policy B: Source code must never be executed automatically during review.
+Policy C: Only metadata is written to the audit log.

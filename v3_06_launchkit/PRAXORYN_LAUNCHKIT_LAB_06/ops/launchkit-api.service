@@ -1,0 +1,23 @@
+[Unit]
+Description=Praxoryn LaunchKit loopback API example
+After=network.target
+
+[Service]
+Type=simple
+User=praxoryn
+Group=praxoryn
+WorkingDirectory=/opt/praxoryn-launchkit
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/usr/bin/python3 -m launchkit --state /var/lib/praxoryn-launchkit serve --port 8787
+Restart=on-failure
+RestartSec=5s
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/var/lib/praxoryn-launchkit
+UMask=0077
+RestrictAddressFamilies=AF_UNIX AF_INET
+
+[Install]
+WantedBy=multi-user.target

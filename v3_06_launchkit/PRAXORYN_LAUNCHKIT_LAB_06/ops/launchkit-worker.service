@@ -1,0 +1,18 @@
+[Unit]
+Description=Praxoryn LaunchKit single worker example
+After=network.target
+
+[Service]
+Type=oneshot
+User=praxoryn
+Group=praxoryn
+WorkingDirectory=/opt/praxoryn-launchkit
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/usr/bin/python3 -m launchkit --state /var/lib/praxoryn-launchkit work-once --backend offline
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/var/lib/praxoryn-launchkit
+UMask=0077
+RestrictAddressFamilies=AF_UNIX

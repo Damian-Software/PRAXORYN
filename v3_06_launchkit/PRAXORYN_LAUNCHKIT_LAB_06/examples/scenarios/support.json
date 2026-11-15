@@ -1,0 +1,12 @@
+{
+  "tickets": [
+    {
+      "id": "ticket-001",
+      "state": "new"
+    },
+    {
+      "id": "ticket-002",
+      "state": "escalate"
+    }
+  ]
+}

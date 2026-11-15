@@ -1,0 +1,12 @@
+{
+  "tasks": [
+    {
+      "id": "access-card",
+      "done": true
+    },
+    {
+      "id": "privacy-training",
+      "done": false
+    }
+  ]
+}

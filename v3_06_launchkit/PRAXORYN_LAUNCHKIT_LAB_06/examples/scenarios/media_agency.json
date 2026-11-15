@@ -1,0 +1,12 @@
+{
+  "assets": [
+    {
+      "id": "poster-1",
+      "status": "approved"
+    },
+    {
+      "id": "video-1",
+      "status": "review"
+    }
+  ]
+}

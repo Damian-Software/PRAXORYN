@@ -1,0 +1,26 @@
+[Unit]
+Description=Local AI single-tenant document retrieval API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=rag-reader
+Group=rag-reader
+WorkingDirectory=/opt/local-ai-rag/app
+EnvironmentFile=/etc/local-ai/rag.env
+ExecStart=/opt/local-ai-rag/venv/bin/uvicorn rag_api:create_app --factory --host 127.0.0.1 --port 8092 --workers 1 --no-access-log
+Restart=on-failure
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/local-ai-rag
+ReadOnlyPaths=/srv/local-ai-rag-docs /etc/local-ai
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+LimitNOFILE=4096
+
+[Install]
+WantedBy=multi-user.target

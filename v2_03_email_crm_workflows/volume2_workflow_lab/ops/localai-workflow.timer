@@ -1,0 +1,11 @@
+[Unit]
+Description=Run one Local AI workflow job every minute
+
+[Timer]
+OnBootSec=2min
+OnUnitInactiveSec=1min
+Persistent=false
+Unit=localai-workflow.service
+
+[Install]
+WantedBy=timers.target

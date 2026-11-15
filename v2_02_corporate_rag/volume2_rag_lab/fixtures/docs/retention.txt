@@ -1,0 +1,1 @@
+The retrieval index stores copies of approved text. The records owner defines a deletion schedule, approval criteria, retention classification, and an audit process. Removing a source document from the upload folder alone does not remove its indexed copies. An operator must run the remove command and validate the result.

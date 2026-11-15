@@ -1,0 +1,2 @@
+nginx: the configuration file /mnt/data/local_ai_build/volume2_stage02/nginx_validation.conf syntax is ok
+nginx: configuration file /mnt/data/local_ai_build/volume2_stage02/nginx_validation.conf test is successful

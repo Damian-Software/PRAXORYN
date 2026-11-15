@@ -1,0 +1,27 @@
+{
+  "source_id": "incident.md",
+  "status": "indexed",
+  "chunks": 1
+}
+{
+  "source_id": "retention.txt",
+  "status": "indexed",
+  "chunks": 1
+}
+[
+  {
+    "label": "S1",
+    "source": "incident.md",
+    "part": 1,
+    "start": 0,
+    "end": 566,
+    "rank": -2.393903666427031e-06
+  }
+]
+{
+  "documents": 2,
+  "chunks": 2
+}
+{
+  "integrity": "ok"
+}

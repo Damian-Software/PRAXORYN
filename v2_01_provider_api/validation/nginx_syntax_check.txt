@@ -1,0 +1,2 @@
+nginx: the configuration file /mnt/data/local_ai_build/volume2/nginx-test.conf syntax is ok
+nginx: configuration file /mnt/data/local_ai_build/volume2/nginx-test.conf test is successful

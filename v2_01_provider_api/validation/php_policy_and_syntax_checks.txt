@@ -1,0 +1,9 @@
+PASS 43 PHP policy assertions
+No syntax errors detected in /mnt/data/local_ai_build/volume2/lab/app/lib/Policy.php
+No syntax errors detected in /mnt/data/local_ai_build/volume2/lab/app/lib/Ledger.php
+No syntax errors detected in /mnt/data/local_ai_build/volume2/lab/app/public/index.php
+No syntax errors detected in /mnt/data/local_ai_build/volume2/lab/app/config-admin.example.php
+No syntax errors detected in /mnt/data/local_ai_build/volume2/lab/app/config.example.php
+No syntax errors detected in /mnt/data/local_ai_build/volume2/lab/tests/policy_test.php
+No syntax errors detected in /mnt/data/local_ai_build/volume2/lab/bin/create_tenant.php
+No syntax errors detected in /mnt/data/local_ai_build/volume2/lab/bin/expire_reservations.php

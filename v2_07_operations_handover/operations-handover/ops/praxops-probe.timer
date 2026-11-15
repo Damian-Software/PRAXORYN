@@ -1,0 +1,11 @@
+[Unit]
+Description=Run a synthetic local AI probe every five minutes
+
+[Timer]
+OnBootSec=2min
+OnUnitInactiveSec=5min
+Unit=praxops-probe.service
+Persistent=false
+
+[Install]
+WantedBy=timers.target

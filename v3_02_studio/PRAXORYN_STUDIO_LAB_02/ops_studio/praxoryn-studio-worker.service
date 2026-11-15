@@ -1,0 +1,17 @@
+[Unit]
+Description=PRAXORYN Studio one-job worker (laboratory)
+After=local-fs.target
+[Service]
+Type=oneshot
+User=praxoryn
+Group=praxoryn
+WorkingDirectory=/opt/praxoryn-studio
+ExecStart=/opt/praxoryn-studio/.venv/bin/python -m praxoryn_studio --home /var/lib/praxoryn-studio work-once
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/praxoryn-studio
+UMask=0077
+[Install]
+WantedBy=multi-user.target

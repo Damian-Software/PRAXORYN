@@ -1,0 +1,19 @@
+[Unit]
+Description=PRAXORYN synthetic local AI API probe
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=praxops
+Group=praxops
+WorkingDirectory=/opt/praxops
+EnvironmentFile=/etc/praxops/probe.env
+ExecStart=/usr/bin/python3 -m praxops --log /var/lib/praxops/probes.jsonl probe --count 1
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+StateDirectory=praxops
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+TimeoutStartSec=150

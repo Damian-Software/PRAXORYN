@@ -1,0 +1,4 @@
+reference,quantity,unit_price,currency
+DEMO-001,2,1250.00,CZK
+DEMO-002,1,350.50,CZK
+DEMO-003,3,59.90,CZK
